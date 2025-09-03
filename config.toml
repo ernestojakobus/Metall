@@ -1,48 +1,41 @@
-baseURL = "/"
-languageCode = "de-de"
-title = "Metallbau Beispiel"
-theme = "PaperMod"
-defaultContentLanguage = "de"
-enableRobotsTXT = true
+# ---- Hugo / GitHub Pages ----
+baseURL: "https://ernestojakobus.github.io/Metall/"
+publishDir: "docs"
+languageCode: "de-de"
+title: "Metallbau Beispiel"
+theme: "PaperMod"
+defaultContentLanguage: "de"
+enableRobotsTXT: true
+canonifyURLs: true   # macht relative Links absolut anhand der baseURL
 
-[params]
-  author = "Metallbau Beispiel"
-  description = "Moderne Metallbau-Webseite mit Galerie und Kontakt"
-  ShowBreadCrumbs = true
-  ShowShareButtons = false
-  defaultTheme = "light"
-  disableThemeToggle = false
+params:
+  author: "Metallbau Beispiel"
+  description: "Moderne Metallbau-Webseite mit Galerie und Kontakt"
+  ShowBreadCrumbs: true
+  ShowShareButtons: false
+  defaultTheme: "light"
+  disableThemeToggle: false
 
-[params.assets]
-  disableFingerprinting = true
+  assets:
+    disableFingerprinting: true
 
-[menu]
-  [[menu.main]]
-    name = "Start"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    name = "Über uns"
-    url = "/ueber-uns/"
-    weight = 2
-
-  [[menu.main]]
-    name = "Leistungen"
-    url = "/leistungen/"
-    weight = 3
-
-  [[menu.main]]
-    name = "Galerie"
-    url = "/galerie/"
-    weight = 4
-
-  [[menu.main]]
-    name = "Kontakt"
-    url = "/kontakt/"
-    weight = 5
-
-  [[menu.main]]
-    name = "Impressum"
-    url = "/impressum/"
-    weight = 6
+menu:
+  main:
+    - name: "Start"
+      url: ""              # Start immer auf baseURL
+      weight: 1
+    - name: "Über uns"
+      url: "ueber-uns/"    # WICHTIG: ohne führenden Slash für Projekt-Pages
+      weight: 2
+    - name: "Leistungen"
+      url: "leistungen/"
+      weight: 3
+    - name: "Galerie"
+      url: "galerie/"
+      weight: 4
+    - name: "Kontakt"
+      url: "kontakt/"
+      weight: 5
+    - name: "Impressum"
+      url: "impressum/"
+      weight: 6
