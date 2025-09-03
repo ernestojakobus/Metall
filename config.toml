@@ -1,0 +1,48 @@
+baseURL = "/"
+languageCode = "de-de"
+title = "Metallbau Beispiel"
+theme = "PaperMod"
+defaultContentLanguage = "de"
+enableRobotsTXT = true
+
+[params]
+  author = "Metallbau Beispiel"
+  description = "Moderne Metallbau-Webseite mit Galerie und Kontakt"
+  ShowBreadCrumbs = true
+  ShowShareButtons = false
+  defaultTheme = "light"
+  disableThemeToggle = false
+
+[params.assets]
+  disableFingerprinting = true
+
+[menu]
+  [[menu.main]]
+    name = "Start"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Über uns"
+    url = "/ueber-uns/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Leistungen"
+    url = "/leistungen/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Galerie"
+    url = "/galerie/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Kontakt"
+    url = "/kontakt/"
+    weight = 5
+
+  [[menu.main]]
+    name = "Impressum"
+    url = "/impressum/"
+    weight = 6
