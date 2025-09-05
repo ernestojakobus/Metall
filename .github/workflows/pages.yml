@@ -1,4 +1,4 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy Hugo site to GitHub Pages (public)
 
 on:
   push:
@@ -21,19 +21,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true      # wichtig, falls PaperMod als Submodule eingebunden ist
-          fetch-depth: 0
+          submodules: true     # falls Theme als Submodule
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
 
-      - name: Build
-        run: hugo --minify       # erzeugt ./public
+      - name: Build (Tailwind + Hugo)
+        env:
+          HUGO_ENV: production
+        run: npm run build      # <- führt Tailwind + 'hugo --minify' aus
 
-      - name: Upload artifact
+      - name: Upload artifact (public)
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
