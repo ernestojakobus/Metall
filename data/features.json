@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Facebook",
+    "description": "Folge uns auf Facebook",
+    "image": "/img/icons/facebook.svg",
+    "link": "https://facebook.com/deinProfil"
+  },
+  {
+    "title": "Instagram",
+    "description": "Schau dir unsere Bilder an",
+    "image": "/img/icons/instagram.svg",
+    "link": "https://instagram.com/deinProfil"
+  },
+  {
+    "title": "Google",
+    "description": "Irgendwas",
+    "image": "/img/icons/google.svg",
+    "link": "https://google.com"
+  }
+]

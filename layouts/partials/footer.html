@@ -1,0 +1,114 @@
+<footer class="bg-tlgray-100">
+  {{ if not .IsHome }}
+  <script src='{{ "/js/clipboard.min.js" | relURL }}'></script>
+  <script src='{{ "/js/highlight.min.js" | relURL }}'></script>
+  <script src='{{ "/js/highlightjs-line-numbers.min.js" | relURL }}'></script>
+  <script src='{{ "/js/sweetalert2.min.js" | relURL }}'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      });
+    }
+  </script>
+  {{ end }}
+
+  <script>
+    function toggleNav() {
+      const hamburger = document.getElementById("hamburgerbtn");
+      const overlay = document.getElementById("overlay");
+      const body = document.body;
+
+      if (hamburger) {
+        hamburger.addEventListener("click", () => {
+          overlay?.classList.toggle("open");
+          hamburger.classList.toggle("is-open");
+          body.classList.toggle("scroll-lock");
+        });
+      }
+    }
+
+    toggleNav();
+
+    
+
+    window.addEventListener('load', () => {
+    setTimeout(() => {
+      const btn = document.getElementById('whatsapp-button');
+      if (btn) {
+        btn.style.display = 'flex';
+
+        // Force reflow to enable transition
+        void btn.offsetWidth;
+
+        btn.style.opacity = '1';
+        btn.style.transform = 'translateY(0)';
+      }
+    }, 3000);
+  });
+</script>
+
+  {{ if .Site.Params.googleFonts }}
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  {{ else }}
+  <link href='{{ "css/webfonts.min.css" | relURL }}' rel="stylesheet" />
+  {{ end }}
+
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      {{ .Site.Params.site.name }}
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow"></div>
+      <div class="flex flex-row items-center text-lg">
+        {{ range .Site.Menus.footer }}
+        <a href="{{ .URL }}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          {{ if not .Pre }}
+          {{ .Name }}
+          {{ else }}
+          {{ .Pre }}
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; {{ site.Title }} {{ now.Year }} All Rights Reserved.
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a id="whatsapp-button" href="https://wa.me/595981215290" target="_blank"
+     style="
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  align-items: center;
+  gap: 8px;
+  font-family: sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.004 2.003a9.995 9.995 0 0 0-8.547 15.246L2 22l4.874-1.445A9.993 9.993 0 1 0 12.004 2.003Zm0 1.998a8 8 0 1 1-7.005 11.973l-.256-.445-.529.157 1.076-3.631-.38-.556A8 8 0 0 1 12.004 4.001Zm-1.662 4.993c-.135-.299-.282-.309-.535-.317-.176-.006-.376-.005-.577-.005-.202 0-.532.076-.812.38-.28.304-1.064 1.04-1.064 2.537s1.089 2.944 1.24 3.147c.152.202 2.108 3.236 5.201 4.403 2.576 1.016 3.1.813 3.658.763.558-.05 1.81-.74 2.068-1.453.258-.712.258-1.325.181-1.453-.076-.128-.28-.203-.584-.355-.304-.152-1.796-.886-2.075-.987-.28-.101-.484-.152-.686.152-.202.305-.787.987-.964 1.189-.177.203-.354.228-.658.076-.304-.152-1.281-.472-2.44-1.506-.901-.803-1.51-1.796-1.687-2.1-.177-.305-.019-.47.133-.622.136-.134.304-.354.456-.532.152-.177.202-.304.304-.506.102-.202.051-.38-.026-.532-.076-.152-.676-1.638-.933-2.238Z"/>
+    </svg>
+    <span style="font-size: 15px;">WhatsApp</span>
+  </a>
+</footer>

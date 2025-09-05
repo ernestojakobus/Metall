@@ -1,0 +1,41 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide relative">
+      <img src="/img/slide/slide01.jpg" alt="Slide 1" class="w-full h-auto object-cover">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-4xl md:text-6xl text-white font-bold drop-shadow-lg">Tella, ein Theme für Unternehmen</h1>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide relative">
+      <img src="/img/slide01/slide02.jpg" alt="Slide 2" class="w-full h-auto object-cover">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-4xl md:text-6xl text-black font-bold drop-shadow-lg">Dein Produkt. Dein Stil.</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper Navigation Buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<!-- Swiper Init Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper-container', {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+  });
+</script>

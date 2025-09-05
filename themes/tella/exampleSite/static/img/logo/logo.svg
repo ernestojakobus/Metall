@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <style>
+    .text { font-family: 'Arial', sans-serif; fill: #555; font-weight: bold; }
+    .title { font-size: 36px; }
+  </style>
+  
+  <!-- Hintergrundform (Bogen) -->
+  <path d="M250,50 a150,150 0 0 1 150,150 v100 h-300 v-100 a150,150 0 0 1 150,-150 z" fill="#ccc"/>
+
+  <!-- Amboss -->
+  <path d="M170,250 h160 l-20,40 h-120 z" fill="#888"/>
+
+  <!-- Hammer -->
+  <rect x="160" y="170" width="20" height="80" transform="rotate(-45 170 210)" fill="#888"/>
+  <rect x="150" y="150" width="40" height="20" transform="rotate(-45 170 160)" fill="#888"/>
+
+  <!-- Zahnrad -->
+  <circle cx="330" cy="270" r="30" fill="#888"/>
+  <circle cx="330" cy="270" r="12" fill="#eee"/>
+  <!-- Zahnoptik -->
+  <rect x="358" y="265" width="10" height="10" transform="rotate(45 360 270)" fill="#888"/>
+  <rect x="328" y="295" width="10" height="10" transform="rotate(45 330 300)" fill="#888"/>
+  <rect x="298" y="265" width="10" height="10" transform="rotate(45 300 270)" fill="#888"/>
+  <rect x="328" y="235" width="10" height="10" transform="rotate(45 330 240)" fill="#888"/>
+
+  <!-- Gitterstruktur -->
+  <line x1="250" y1="100" x2="250" y2="200" stroke="#eee" stroke-width="6"/>
+  <line x1="220" y1="100" x2="220" y2="200" stroke="#eee" stroke-width="6"/>
+  <line x1="280" y1="100" x2="280" y2="200" stroke="#eee" stroke-width="6"/>
+  <line x1="180" y1="150" x2="320" y2="150" stroke="#eee" stroke-width="6"/>
+
+  <!-- Name -->
+  <text x="250" y="390" text-anchor="middle" class="text title">OSCAR COLLANTE</text>
+</svg>
+
+

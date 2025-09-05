@@ -1,0 +1,46 @@
+<header class="bg-white shadow-md">
+  <nav class="w-full flex items-center justify-between flex-wrap py 0 px 0">
+
+    <!-- Logo -->
+    <div class="flex items-center flex-shrink-0">
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.logo.main | relURL }}"
+             alt="{{ .Site.Params.logo.alt }}"
+             style="height: 120px; display: block; line-height: 0;" />
+      </a>
+    </div>
+
+    <!-- Hamburger Icon (Mobile) -->
+    <div class="block lg:hidden">
+      <button id="hamburgerbtn" class="text-gray-800 focus:outline-none">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menü (Desktop & Mobile) -->
+    <div id="mobileMenu" class="w-full lg:flex lg:items-center lg:w-auto hidden lg:block">
+      <div class="text-right lg:flex-grow lg:text-left mt-4 lg:mt-0">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | safeURL }}"
+           class="block lg:inline-block text-gray-800 hover:text-blue-600 mr-6">
+          {{ .Name }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hamburger Menü Logik -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('hamburgerbtn');
+  const menu = document.getElementById('mobileMenu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+});
+</script>

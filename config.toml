@@ -1,50 +1,99 @@
-# ---- Hugo / GitHub Pages ----
 baseURL = "https://ernestojakobus.github.io/Metall/"
 languageCode = "de-de"
 title = "Metallbau Beispiel"
-theme = "PaperMod"
+author = "Metallbau Beispiel"
+theme = "tella"
 defaultContentLanguage = "de"
+enableInlineShortcodes = true
 enableRobotsTXT = true
-canonifyURLs = true   # macht relative Links absolut anhand der baseURL
+canonifyURLs = true
+timeout = 30000
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+  [privacy.vimeo]
+  disabled = false
+  simple = true
+  [privacy.twitter]
+  disabled = false
+  enableDNT = true
+  simple = true
+  disableInlineCSS = true
+  [privacy.instagram]
+  disabled = false
+  simple = true
+  [privacy.youtube]
+  disabled = false
+  privacyEnhanced = true
 
 [params]
-  author = "Metallbau Beispiel"
-  description = "Moderne Metallbau-Webseite mit Galerie und Kontakt"
-  ShowBreadCrumbs = true
-  ShowShareButtons = false
-  defaultTheme = "light"
-  disableThemeToggle = false
+  showBlog = true
+  mainSections = ['blog']
+  googleFonts = true
 
-  [params.assets]
-    disableFingerprinting = true
+  [params.logo]
+    main = "img/logo/logo.svg"
+    alt = "Tella Logo"
+    size = "h-14"
+
+  [params.site]
+    name = "Tella"
+
+  [params.icon]
+    fontawesome = true
+
+  [params.homepage_meta_tags]
+    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_og_title = "Tella"
+    meta_og_type = "website"
+    meta_og_url = "https://ernestojakobus.github.io/Metall/"
+    meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
+    meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_twitter_card = "summary_large_image"
+    meta_twitter_site = "@username"
+    meta_twitter_creator = "@username"
 
 [menu]
+  # MENÜ-URLs OHNE führenden Slash, damit sie unter /Metall/ korrekt sind
   [[menu.main]]
-    name = "Start"
-    url = ""              # Start immer auf baseURL
+    identifier = "products"
+    name = "Products"
+    url = "products/"
     weight = 1
 
   [[menu.main]]
-    name = "Über uns"
-    url = "ueber-uns/"    # Wichtig: ohne führenden Slash für Projekt-Pages
+    identifier = "blog"
+    name = "Blog"
+    url = "blog/"
     weight = 2
 
   [[menu.main]]
-    name = "Leistungen"
-    url = "leistungen/"
+    identifier = "about"
+    name = "About"
+    url = "about/"
     weight = 3
 
   [[menu.main]]
-    name = "Galerie"
-    url = "galerie/"
+    identifier = "contact"
+    name = "Contact"
+    url = "contact/"
     weight = 4
 
-  [[menu.main]]
-    name = "Kontakt"
-    url = "kontakt/"
-    weight = 5
+  # Footer Menu
+  [[menu.footer]]
+    name = "Home"
+    url = ""
+    weight = 1
 
-  [[menu.main]]
-    name = "Impressum"
-    url = "impressum/"
-    weight = 6
+  [[menu.footer]]
+    name = "Github"
+    url = "https://github.com/opera7133/tella"
+    pre = "<i class='icon-github text-2xl'></i>"
+    weight = 2
