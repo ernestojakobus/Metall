@@ -1,6 +1,5 @@
 # ---- Hugo / GitHub Pages ----
 baseURL = "https://ernestojakobus.github.io/Metall/"
-publishDir = "docs"
 languageCode = "de-de"
 title = "Metallbau Beispiel"
 theme = "PaperMod"
